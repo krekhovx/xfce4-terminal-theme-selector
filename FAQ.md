@@ -11,7 +11,7 @@
 I love xfce4-terminal and use it a lot. A long time ago, I saw a YouTube video
 where an engineer compared different terminals. That’s where I noticed Kitty and
 its ability to switch themes directly from the command line. This inspired me,
-and I created this issue: https://gitlab.xfce.org/apps/xfce4-terminal/-/issues/364
+and I created this [issue](https://gitlab.xfce.org/apps/xfce4-terminal/-/issues/364).
 
 The developers explained that they were unlikely to add such a feature directly
 into xfce4-terminal, but they pointed out that it could be implemented as an
@@ -74,8 +74,8 @@ object.
 <a name="where-can-you-get-themes-for-xfce4-terminal"></a>
 ## Where can you get themes for xfce4-terminal?
 You can create your own themes or look for existing ones on GitHub or elsewhere.
-Personally, I collect my favorite themes here:
-https://github.com/krekhovx/dotfiles-debian/tree/master/.local/share/xfce4/terminal/colorschemes
+Personally, I collect my favorite themes
+[here](https://github.com/krekhovx/dotfiles-debian/tree/master/.local/share/xfce4/terminal/colorschemes).
 
 Many themes for GNOME Terminal, Konsole, or Alacritty can be adapted for
 xfce4-terminal if you convert their format (usually it’s enough to map the

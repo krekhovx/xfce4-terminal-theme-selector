@@ -1,0 +1,10 @@
+* Add a terminal size check (for example, require at least 80x24) to prevent
+  crashes when the window is too small.
+
+* Add tests for core modules. Skip TUI.
+
+  Reason: curses-based TUI depends on real terminal behavior and input, making
+  automated testing unreliable; it's normally tested manually.
+
+* Consider whether checking TERMINAL or blocking non-XFCE terminals is worth it
+  (likely no).

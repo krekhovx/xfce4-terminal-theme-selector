@@ -1,0 +1,12 @@
+[project]
+name = "xfce4-terminal-theme-selector"
+version = "1.0.0"
+description = "Simple curses-based theme selector for xfce4-terminal"
+authors = [
+  { name="Kirill Rekhov", email="krekhov.dev@gmail.com" }
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.scripts]
+xfce4-terminal-theme-selector = "xfce4_terminal_theme_selector.main:main"

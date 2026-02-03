@@ -1,7 +1,7 @@
 # xfce4-terminal-theme-selector
 
 `xfce4-terminal-theme-selector` - simple curses-based theme selector for
-xfce4-terminal. It allows you to easily switch themes from the command line,
+`xfce4-terminal`. It allows you to easily switch themes from the command line,
 providing a convenient way to change themes without keeping the preferences
 dialog open.
 

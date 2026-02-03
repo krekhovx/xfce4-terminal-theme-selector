@@ -8,5 +8,8 @@ authors = [
 requires-python = ">=3.8"
 dependencies = []
 
+[tool.setuptools.packages.find]
+include = ["xfce4_terminal_theme_selector"]
+
 [project.scripts]
 xfce4-terminal-theme-selector = "xfce4_terminal_theme_selector.main:main"

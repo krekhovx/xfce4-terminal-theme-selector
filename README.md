@@ -24,13 +24,13 @@ There are multiple options:
 python3 -m pip install git+https://github.com/krekhovx/xfce4-terminal-theme-selector
 ```
 If you encounter an error due to an externally managed environment, create a
-virtual environment using `python3 -m venv`.
+virtual environment using `python3 -m venv`
 
 After installation, simply run the `xfce4-terminal-theme-selector` command.
 
-- Alternatively, you can simply run `./bin/xfce4-terminal-theme-selector-local`
+- Alternatively, you can run `./bin/xfce4-terminal-theme-selector-local`
   from the cloned repository without installation.
 
 ## FAQ
 You may find it useful to read
-[FAQ.md](https://github.com/krekhovx/xfce4-terminal-theme-selector/blob/master/FAQ.md).
+[FAQ](https://github.com/krekhovx/xfce4-terminal-theme-selector/blob/master/FAQ.md)

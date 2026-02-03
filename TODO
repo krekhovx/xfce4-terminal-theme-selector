@@ -1,6 +1,8 @@
 * Add a terminal size check (for example, require at least 80x24) to prevent
   crashes when the window is too small.
 
+* Add xfce4-terminal-theme-selector.1 to man/
+
 * Add tests for core modules. Skip TUI.
 
   Reason: curses-based TUI depends on real terminal behavior and input, making

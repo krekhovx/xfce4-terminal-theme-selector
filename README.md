@@ -5,6 +5,10 @@ xfce4-terminal. It allows you to easily switch themes from the command line,
 providing a convenient way to change themes without keeping the preferences
 dialog open.
 
+<div align="center">
+<img src="https://github.com/krekhovx/xfce4-terminal-theme-selector/blob/master/assets/main.gif">
+</div>
+
 ## Features
 
 - Preview themes in real-time.

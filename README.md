@@ -35,6 +35,10 @@ After installation, simply run the `xfce4-terminal-theme-selector` command.
 - Alternatively, you can run `./bin/xfce4-terminal-theme-selector-local`
   from the cloned repository without installation.
 
+## Contribution
+PRs and issues are welcome! Have an idea for a new feature or improvement for
+`xfce4-terminal-theme-selector`? Open an issue or fork the project and contribute.
+
 ## FAQ
 You may find it useful to read
 [FAQ](https://github.com/krekhovx/xfce4-terminal-theme-selector/blob/master/FAQ.md)

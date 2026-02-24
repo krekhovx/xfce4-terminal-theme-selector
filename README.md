@@ -19,7 +19,7 @@ dialog open.
 
 There are multiple options:
 
-- Debian‑based systems:
+- Debian-based systems:
   Make sure these packages are installed:
   `xfce4-terminal` `python3-gi` `python3-gi-cairo` `gir1.2-xfconf-0`
 

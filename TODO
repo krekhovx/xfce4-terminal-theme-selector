@@ -10,3 +10,11 @@
 
 * Consider whether checking TERMINAL or blocking non-XFCE terminals is worth it
   (likely no).
+
+* https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1126893
+
+  If the package is accepted into Debian, I can share information about it on
+  debian-devel@lists.debian.org and debian-xfce@lists.debian.org to attract
+  attention to the project.
+
+  Reddit and relevant subreddits can also be used for this purpose.

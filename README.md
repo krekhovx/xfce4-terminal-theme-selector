@@ -3,7 +3,9 @@
 `xfce4-terminal-theme-selector` - simple curses-based theme selector for
 `xfce4-terminal`. It allows you to easily switch themes from the command line,
 providing a convenient way to change themes without keeping the preferences
-dialog open.
+dialog open. It solves issue
+[#364](https://gitlab.xfce.org/apps/xfce4-terminal/-/issues/364)
+(which upstream didn’t plan to implement). Would love feedback from XFCE users.
 
 <div align="center">
 <img src="https://github.com/krekhovx/xfce4-terminal-theme-selector/blob/master/assets/main.gif">

@@ -8,16 +8,23 @@ This module provides a curses-based user interface for selecting
 and previewing xfce4-terminal themes.
 """
 
+import sys
 import curses
 from . import apply
 from .apply import apply_preview, restore_state
 from .themes import get_theme_properties
 
+MIN_WIDTH = 80
+MIN_HEIGHT = 24
+
 def show_no_themes():
     def ui(stdscr):
         stdscr.clear()
         curses.curs_set(0)
-        h, w = stdscr.getmaxyx()
+        curses.update_lines_cols()
+        h, w = curses.LINES, curses.COLS
+        if h < MIN_HEIGHT or w < MIN_WIDTH:
+            return "too_small"
 
         msg1 = "No color schemes found."
         msg2 = "Check your ~/.local/share/xfce4/terminal/colorschemes"
@@ -45,7 +52,14 @@ def show_no_themes():
         stdscr.refresh()
         stdscr.getch()
 
-    curses.wrapper(ui)
+    result = curses.wrapper(ui)
+
+    if result == "too_small":
+        print(
+            f"Terminal is too small. Minimum size is {MIN_WIDTH}x{MIN_HEIGHT}.",
+            file=sys.stderr,
+        )
+        return -1
 
 def run_ui(themes, saved_state, active_theme_name="unknown"):
     search_mode = False
@@ -61,7 +75,10 @@ def run_ui(themes, saved_state, active_theme_name="unknown"):
     def display_menu(stdscr):
         nonlocal selected_row, visible_offset
         stdscr.clear()
-        h, w = stdscr.getmaxyx()
+        curses.update_lines_cols()
+        h, w = curses.LINES, curses.COLS
+        if h < MIN_HEIGHT or w < MIN_WIDTH:
+            return "too_small"
 
         # Header
         stdscr.addstr(1, 3, header_path[: w - 4])
@@ -120,16 +137,24 @@ def run_ui(themes, saved_state, active_theme_name="unknown"):
             stdscr.addstr(footer_y + 1, 3, "/" + search_text)
 
         stdscr.refresh()
+        return None
 
     def main(stdscr):
         nonlocal selected_row, visible_offset, search_mode, search_text
+
+        curses.update_lines_cols()
+        h, w = curses.LINES, curses.COLS
+        if h < MIN_HEIGHT or w < MIN_WIDTH:
+            return "too_small"
 
         curses.set_escdelay(1)
         curses.curs_set(0)
         restore_state()
 
         while True:
-            display_menu(stdscr)
+            if display_menu(stdscr) == "too_small":
+                return "too_small"
+
             key = stdscr.getch()
 
             h, _ = stdscr.getmaxyx()
@@ -143,10 +168,12 @@ def run_ui(themes, saved_state, active_theme_name="unknown"):
                     search_mode = False
                     search_text = ""
                     continue
+
                 if key in (10, 13):
                     search_mode = False
                     if not search_text:
                         continue
+
                     for i, t in enumerate(themes):
                         if search_text.lower() in t["name"].lower():
                             selected_row = i
@@ -183,6 +210,7 @@ def run_ui(themes, saved_state, active_theme_name="unknown"):
 
                 if selected_row < visible_offset:
                     visible_offset = selected_row
+
             elif key in (curses.KEY_DOWN, ord("j")):
                 if selected_row < len(themes) - 1:
                     selected_row += 1
@@ -211,4 +239,13 @@ def run_ui(themes, saved_state, active_theme_name="unknown"):
 
         return -1
 
-    return curses.wrapper(main)
+    result = curses.wrapper(main)
+
+    if result == "too_small":
+        print(
+            f"Terminal is too small. Minimum size is {MIN_WIDTH}x{MIN_HEIGHT}.",
+            file=sys.stderr,
+        )
+        return -1
+
+    return result

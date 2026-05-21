@@ -22,8 +22,8 @@ dialog open. It solves issue
 There are multiple options:
 
 - Debian-based systems:
-  Make sure these packages are installed:
-  `xfce4-terminal` `python3-gi` `python3-gi-cairo` `gir1.2-xfconf-0`
+  ([Package Tracker](https://tracker.debian.org/pkg/xfce4-terminal-theme-selector))<br>
+  `sudo apt install xfce4-terminal-theme-selector`
 
 - You can install the package from this Git repository using `pip`:
 ```

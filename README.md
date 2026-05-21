@@ -21,9 +21,11 @@ dialog open. It solves issue
 
 There are multiple options:
 
-- Debian-based systems:
-  ([Package Tracker](https://tracker.debian.org/pkg/xfce4-terminal-theme-selector))<br>
-  `sudo apt install xfce4-terminal-theme-selector`
+- Debian-based systems
+  ([Package Tracker](https://tracker.debian.org/pkg/xfce4-terminal-theme-selector)):
+```
+sudo apt install xfce4-terminal-theme-selector
+```
 
 - You can install the package from this Git repository using `pip`:
 ```
